@@ -1,0 +1,99 @@
+@import '../../../../../Assets/Styles/variables';
+
+.section-four {
+  height: 100%;
+  background-color: $color-text;
+  .container {
+    max-width: 80%;
+  }
+  .history {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: $color-text;
+    .boxHistory {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      .title {
+        font-size: 80px;
+        font-weight: 800;
+        font-stretch: normal;
+        font-style: normal;
+        letter-spacing: normal;
+        text-align: center;
+
+        margin-bottom: 40px;
+        color: $bg-color;
+        opacity: 1;
+      }
+
+      .boxContent {
+        width: 100%;
+        &_item {
+          text-align: left;
+          outline: none;
+          .year {
+            width: 89px;
+            height: 31px;
+            font-size: 40.5px;
+            font-weight: 800;
+            font-stretch: normal;
+            font-style: normal;
+
+            line-height: 1;
+            letter-spacing: normal;
+            color: $bg-color;
+          }
+
+          .itemList {
+            position: relative;
+            height: 250px;
+            width: 90%;
+            margin: 30px 0;
+
+            overflow-y: auto;
+            transition: 0.5s;
+            &::-webkit-scrollbar-track {
+              background-color: #ccc;
+              cursor: pointer;
+            }
+            &::-webkit-scrollbar {
+              width: 2px;
+              background-color: #aaa;
+              cursor: pointer;
+            }
+            &::-webkit-scrollbar-thumb {
+              background-color: transparent;
+              cursor: pointer;
+            }
+
+            &:hover {
+              &::-webkit-scrollbar-thumb {
+                background-color: $bg-color;
+              }
+            }
+            .box {
+              margin-top: 30px;
+              h2 {
+                color: $bg-color;
+                font-size: 12px;
+                margin-bottom: 3px;
+              }
+              p {
+                font-size: 12px;
+                font-weight: 200;
+                line-height: 18px;
+                width: 85%;
+                color: $bg-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,25 +1,46 @@
+import i18n from 'i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
+import HttpApi from 'i18next-http-backend';
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { initReactI18next } from 'react-i18next';
+import { BrowserRouter, Route } from 'react-router-dom';
+import RoutesWrapper from './Components/Pages/Routers/Router';
+
+i18n
+  .use(initReactI18next) // passes i18n down to react-i18next
+  .use(LanguageDetector)
+  .use(HttpApi)
+  .init({
+    // the translations
+    // (tip move them in a JSON file and import them,
+    // or even better, manage them via a UI: https://react.i18next.com/guides/multiple-translation-files#manage-your-translations-with-a-management-gui)
+    fallbackLng: 'en',
+    detection: {
+      order: [
+        'localStorage',
+        'cookie',
+        'htmlTag',
+        'localStorage',
+        'path',
+        'subdomain',
+      ],
+      caches: ['localStorage', 'cookie'],
+    },
+    backend: {
+      loadPath: 'assets/locales/{{lng}}/translation.json',
+    },
+    react: {
+      useSuspense: false,
+    },
+  });
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div>
+        <Route path="/" component={RoutesWrapper} />
+      </div>
+    </BrowserRouter>
   );
 }
 
