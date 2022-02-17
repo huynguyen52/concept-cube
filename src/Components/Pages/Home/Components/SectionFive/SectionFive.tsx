@@ -1,5 +1,6 @@
 import React from 'react';
 import './SectionFive.scss';
+import { MailOutlined } from '@ant-design/icons';
 
 function SectionFive() {
   return (
@@ -8,11 +9,21 @@ function SectionFive() {
         <div className="section-five-main">
           <div className="section-five-inner-wrapper section-five-inner-wrapper-1">
             <p className="section-five-text">Partnetship.</p>
-            <a className="section-five-link">looc.tzlee@gmail.com</a>
+            <div className="section-five-link-wr">
+              <a className="section-five-link">looc.tzlee@gmail.com</a>
+              <div className="mail">
+                <MailOutlined />
+              </div>
+            </div>
           </div>
           <div className="section-five-inner-wrapper section-five-inner-wrapper-1">
             <p className="section-five-text">Recruiting.</p>
-            <a className="section-five-link">looc.tzlee@gmail.com</a>
+            <div className="section-five-link-wr">
+              <a className="section-five-link">looc.tzlee@gmail.com</a>
+              <div className="mail">
+                <MailOutlined />
+              </div>
+            </div>
           </div>
           <div className="section-five-inner-wrapper section-five-inner-wrapper-2">
             <p className="section-five-text">Learn more.</p>
