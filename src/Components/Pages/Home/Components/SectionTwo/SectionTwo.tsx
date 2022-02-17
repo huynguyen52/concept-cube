@@ -26,7 +26,7 @@ function SectionTwo() {
             autoplay
             infinite
             pauseOnHover
-            autoplaySpeed={5000}
+            autoplaySpeed={2000}
             arrows={false}
             fade
             centerMode
